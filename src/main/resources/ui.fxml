@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.ptv.nascleaner.UIController"
+            prefWidth="800" prefHeight="600">
+
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <HBox spacing="10" alignment="CENTER">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+                <Label text="NAS Folder:" />
+                <TextField fx:id="pathField" prefWidth="400"/>
+                <Button text="Browse" onAction="#chooseDirectory"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+                <Label text="Modified Before:" />
+                <DatePicker fx:id="datePicker"/>
+                <Button text="Scan Files" onAction="#scanFiles"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="fileTable">
+            <columns>
+                <TableColumn fx:id="selectColumn" text="Select" prefWidth="60"/>
+                <TableColumn fx:id="fileNameColumn" text="File Name" prefWidth="200"/>
+                <TableColumn fx:id="filePathColumn" text="File Path" prefWidth="300"/>
+                <TableColumn fx:id="modifiedDateColumn" text="Modified Date" prefWidth="150"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="CENTER">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Button text="Select All" onAction="#selectAll"/>
+            <Button text="Deselect All" onAction="#deselectAll"/>
+            <Button text="Delete Selected" onAction="#deleteFiles"/>
+        </HBox>
+    </bottom>
+</BorderPane>

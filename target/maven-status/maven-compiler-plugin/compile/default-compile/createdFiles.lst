@@ -1,0 +1,4 @@
+com\ptv\nascleaner\NasPathCleanerApplication.class
+com\ptv\nascleaner\FileTableItem.class
+com\ptv\nascleaner\FileScannerService.class
+com\ptv\nascleaner\UIController.class
