@@ -1,49 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 
+<!-- Main layout using BorderPane -->
 <BorderPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.ptv.nascleaner.UIController"
             prefWidth="800" prefHeight="600">
 
+    <!-- Top section with input fields -->
     <top>
         <VBox spacing="10">
             <padding>
                 <Insets top="10" right="10" bottom="10" left="10"/>
             </padding>
+
+            <!-- Folder selection row -->
             <HBox spacing="10" alignment="CENTER">
-                <padding>
-                    <Insets top="10" right="10" bottom="10" left="10"/>
-                </padding>
                 <Label text="NAS Folder:" />
                 <TextField fx:id="pathField" prefWidth="400"/>
                 <Button text="Browse" onAction="#chooseDirectory"/>
             </HBox>
 
+            <!-- Date selection row -->
             <HBox spacing="10" alignment="CENTER">
-                <padding>
-                    <Insets top="10" right="10" bottom="10" left="10"/>
-                </padding>
                 <Label text="Modified Before:" />
                 <DatePicker fx:id="datePicker"/>
                 <Button text="Scan Files" onAction="#scanFiles"/>
             </HBox>
+
+            <!-- File mask input row -->
+            <HBox spacing="10" alignment="CENTER">
+                <Label text="File Mask:" />
+                <TextField fx:id="maskField" promptText="e.g. *.log, .pdf, report_??.csv" prefWidth="300"/>
+            </HBox>
         </VBox>
     </top>
 
+    <!-- Center section showing the file table -->
     <center>
-        <TableView fx:id="fileTable">
+        <TableView fx:id="fileTable" editable="true">
             <columns>
+                <!-- Checkbox for selection -->
                 <TableColumn fx:id="selectColumn" text="Select" prefWidth="60"/>
+                <!-- File name column -->
                 <TableColumn fx:id="fileNameColumn" text="File Name" prefWidth="200"/>
+                <!-- File path column -->
                 <TableColumn fx:id="filePathColumn" text="File Path" prefWidth="300"/>
+                <!-- Modified date column -->
                 <TableColumn fx:id="modifiedDateColumn" text="Modified Date" prefWidth="150"/>
             </columns>
         </TableView>
     </center>
 
+    <!-- Bottom section with action buttons -->
     <bottom>
         <HBox spacing="10" alignment="CENTER">
             <padding>
@@ -54,4 +64,5 @@
             <Button text="Delete Selected" onAction="#deleteFiles"/>
         </HBox>
     </bottom>
+
 </BorderPane>

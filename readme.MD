@@ -1,27 +1,38 @@
 # 📂 NAS Path Cleaner
 
-A desktop application built with **JavaFX** and **Spring Boot** that scans a selected NAS (Network Attached Storage) folder for files **older than a specific date** and allows the user to **delete selected files** via a graphical interface.
+A lightweight desktop application built using **JavaFX** and **Spring Boot** that helps you scan and clean up files from any NAS or local directory. You can filter files older than a selected date and delete them easily using a graphical interface.
 
 ---
 
 ## ✨ Features
 
-- Select any NAS/local folder
-- Specify a date – find all files **modified before** this date
-- Review files in a sortable table
-- Select/deselect individual files or all files
-- Delete selected files in one click
-- Spring Boot manages service layer logic
-- JavaFX provides a clean and responsive UI
+- 📁 Browse and select any NAS or local folder  
+- 📅 Pick a date to find all files **modified before** that date  
+- 🧾 View matching files in a clean, sortable table  
+- ✅ Select/Deselect individual files or all at once  
+- 🗑️ Delete selected files with a single click  
+- ⚙️ Runtime-configurable file mask (e.g., `*.log`, `report_??.txt`)  
+- ☕ Built with Spring Boot for backend logic and JavaFX for modern UI  
 
 ---
 
 ## 🚀 Tech Stack
 
-- Java 17
-- JavaFX 21
-- Spring Boot
-- Maven
+- 🧠 **Java 17**
+- 🎨 **JavaFX 21**
+- 🔧 **Spring Boot**
+- 📦 **Maven**
+
+---
+
+## 🛠️ Build & Run
+
+### ✅ Prerequisites
+
+- JDK **17** or higher installed  
+- Maven installed  
+- JavaFX SDK **21** installed
+
 
 ---
 
